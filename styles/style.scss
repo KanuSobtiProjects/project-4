@@ -1,0 +1,141 @@
+/* ========================
+   	   table of contents 
+   ======================== */
+
+// 1) 	GENERAL STYLES
+// 2) 	WRAPPER
+// 3) 	TYPOGRAPHY
+// 4) 	FORM STYLES
+// 5)	FOOTER STYLES
+// 6) 	MEDIA QUERIES
+// X)   PARTIALS
+
+
+// 1 GENERAL STYLES
+
+body {
+background-image: url(../assets/mountains.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed; 
+background-size: cover;
+}
+
+img {
+	max-width: 100%;
+}
+
+// 2. WRAPPER
+
+.wrapper {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+// 3. TYPOGRAPHY
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 125%;
+	text-transform: uppercase;
+}
+
+fieldset {
+	color: white;
+	h1 {
+		padding-top: 20%;
+		letter-spacing: 0.2rem;
+		font-size: 1rem;
+	}
+	label {
+		text-align: center;
+		font-size: 0.8rem;
+	}
+	input[type="submit"] {
+			font-size: 2rem;
+	}
+}
+
+footer h3 {
+	font-size: 0.8rem;
+	font-weight: 300;
+	letter-spacing: 0.2rem;
+}
+
+// 4) FORM STYLES
+
+form {
+	display: flex;
+	justify-content: center;
+	height: 90vh;
+	fieldset {
+		border: none;
+		width: auto;
+	}
+	h1 {
+		font-size: 1rem;
+	}
+	label {
+		letter-spacing: 0.2rem;
+		margin-bottom: 1rem;
+	}
+	input[type="text"]{
+		width: 90%;
+		margin-bottom: 1rem;
+	}
+	input[type="submit"] {
+		background: rgba(99, 111, 159, 0.5);
+		border: none;
+		color: white;
+	}
+	option {
+		text-transform: capitalize;
+		width: 100px;
+	}
+}
+
+.formInputs {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 60%;
+}
+
+.generate {
+	margin: 0 auto;
+	width: 70px;
+}
+
+// 5) FOOTER STYLES
+
+footer {
+	margin-top: 50px;
+	color: white;
+}
+
+// 6) MEDIA QUERIES
+
+/* ---------------- Landscape phones and up ---------------- */
+@media (min-width: 480px) {
+}
+
+/* ------------- Landscape phone to portrait table ------------- */
+@media (min-width: 768px) {
+
+	fieldset {
+		h1 {
+			padding-top: 20%;
+			letter-spacing: 0.2rem;
+			font-size: 1rem;
+		}
+}
+
+/* --------------- Portrait tablet and small desktops --------------- */
+@media (min-width: 940px) {
+}
+
+// X)   PARTIALS
+@import "_setup";

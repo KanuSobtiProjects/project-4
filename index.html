@@ -5,11 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home | Event Finder</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+  <main class="wrapper">
+  <form>
+    <fieldset>
+      <h1>Find An Event Near You!</h1>
 
+      <div class="formInputs">
+        <label for="postalCode" id="postalCode">Type in your Postal Code</label>
+        <input type="text" name="postalCode" id="postalCode" placeholder="Postal Code" required>
+  
+        <select required>
+         <option value=""></option>
+         <option value=""></option>
+         <option value=""></option>
+         <option value=""></option>
+        </select>
+      </div> 
+
+      <div class="generate">
+          <label for=""></label>
+         <input id="myForm" type="submit" name="generate" value="GO!">
+      </div>
+
+    </fieldset>
+  </form> 
+    <section>
+      <!-- <div class="output">
+        <h2 class="eventName">
+          Example Event
+        </h2>
+        <p class="eventDescription">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quae praesentium ad! Sed recusandae debitis quos ipsum explicabo autem amet!
+        </p>
+        <img src="https://placeimg.com/300/300/animals?t=1566950648267" alt="">
+      </div> -->
+    </section>
+  </main>
+  <footer>
+    <h3>Design by Prashath Cheliyan & Kanu Sobti || Ticketmaster API</h3>
+  </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
   <script src="javascript/script.js"></script>
 </body>
