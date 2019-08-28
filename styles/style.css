@@ -77,12 +77,22 @@ form label {
 form input[type="text"] {
   width: 90%;
   margin-bottom: 1rem;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 form input[type="submit"] {
   background: rgba(99, 111, 159, 0.5);
   border: none;
+  margin-top: -50px;
+  padding: 2.5px 5px;
+  border-radius: 5px;
   color: white;
+}
+
+form input:hover[type="submit"],
+form input:active[type="submit"] {
+  color: darkblue;
 }
 
 form option {
@@ -115,12 +125,25 @@ form option {
 }
 
 footer {
+  margin-left: 30px;
   margin-top: 50px;
+  color: white;
+}
+
+footer a {
   color: white;
 }
 
 /* ---------------- Landscape phones and up ---------------- */
 /* ------------- Landscape phone to portrait table ------------- */
+@media (min-width: 768px) {
+  fieldset h1 {
+    padding-top: 20%;
+    letter-spacing: 0.2rem;
+    font-size: 1rem;
+  }
+}
+
 /* --------------- Portrait tablet and small desktops --------------- */
 article,
 aside,

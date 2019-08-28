@@ -80,14 +80,23 @@ form {
 		letter-spacing: 0.2rem;
 		margin-bottom: 1rem;
 	}
-	input[type="text"]{
+	input[type="text"] {
 		width: 90%;
 		margin-bottom: 1rem;
+		border-radius: 5px;
+		padding: 5px;
 	}
 	input[type="submit"] {
 		background: rgba(99, 111, 159, 0.5);
 		border: none;
+		margin-top: -50px;
+		padding: 2.5px 5px;
+		border-radius: 5px;
 		color: white;
+	}
+	input:hover[type="submit"],
+	input:active[type="submit"] {
+		color: darkblue;
 	}
 	option {
 		text-transform: capitalize;
@@ -112,8 +121,12 @@ form {
 // 5) FOOTER STYLES
 
 footer {
+	margin-left: 30px;
 	margin-top: 50px;
 	color: white;
+	a {
+		color: white;
+	}
 }
 
 // 6) MEDIA QUERIES
@@ -131,6 +144,7 @@ footer {
 			letter-spacing: 0.2rem;
 			font-size: 1rem;
 		}
+	}
 }
 
 /* --------------- Portrait tablet and small desktops --------------- */
