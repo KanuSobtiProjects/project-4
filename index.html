@@ -10,15 +10,16 @@
 </head>
 <body>
   <main class="wrapper">
-  <form>
+  <form id="userSelectionForm">
     <fieldset>
       <h1>Find An Event Near You!</h1>
 
       <div class="formInputs">
         <label for="postalCode" id="postalCode">Type in your Postal Code</label>
-        <input type="text" name="postalCode" id="postalCode" placeholder="Postal Code" required>
-  
-        <select required>
+        <input type="text" name="postalCode" id="postalCode" placeholder="eg. A1A 1A1" required>
+        
+        <label for="preferredGenre">Choose your Genre</label>
+        <select id="preferredGenre" required>
          <option value=""></option>
          <option value=""></option>
          <option value=""></option>
@@ -28,7 +29,7 @@
 
       <div class="generate">
           <label for=""></label>
-         <input id="myForm" type="submit" name="generate" value="GO!">
+         <input id="submit" type="submit" name="generate" value="GO!">
       </div>
 
     </fieldset>
@@ -46,7 +47,7 @@
     </section>
   </main>
   <footer>
-    <h3>Design by <a href="https://www.prashath.dev">Prashath Cheliyan</a> & <a href="https://www.kanusobti.com ">Kanu Sobti</a> || Ticketmaster API</h3>
+    <h3>Design by <a href="https://www.prashath.dev">Prashath Cheliyan</a> & <a href="http://www.kanusobti.com ">Kanu Sobti</a> || Ticketmaster API</h3>
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
   <script src="javascript/script.js"></script>
