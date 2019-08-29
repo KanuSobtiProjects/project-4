@@ -1,14 +1,15 @@
 // namespacing object
 
 const findEvent = {};
+// let preferredGenre = Sports;//Default value
 let city = ["Toronto", "Vancouver", "Montreal" , "Calgary"]
 let classificationName = ["Sports", "Music", "Arts"]
 
 
 // cache of DOM elements
-const $form = $('#userSelectionForm');
-const $userSelectedGenre = $('#preferredGenre');
-const $submit = $('#submit');
+// const $form = $('#userSelectionForm');
+// const $userSelectedGenre = $('#preferredGenre');
+// const $submit = $('#submit');
 
 // init function
 
@@ -31,12 +32,18 @@ const $submit = $('#submit');
 $('#userSelectionForm').on('submit', function(event) {
         event.preventDefault();
         findEvent.eventCity = $('input[name="city"]:checked').val();
-        console.log(findEvent.eventCity);
+        console.log(findEvent.eventCity, "hello");
        
-        findEvent.classificationName = $('#preferredGenre:selected').val();
+        findEvent.classificationName = $('#preferredGenre').find(":selected").text();
         console.log(findEvent.classificationName);
-        
-       
+
+        // $("#preferredGenre").on('change',function() {
+        //     console.log('I got called');
+        //     preferr = $("#dotShape").val();
+        //     console.log(dotShape);
+        //     obj["particles"].shape.type = dotShape;
+        //     particlesJS('particles-js',obj);
+        //   });
 
 })
 
