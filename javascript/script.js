@@ -1,62 +1,91 @@
 // namespacing object
 
 const findEvent = {};
+// let preferredGenre = Sports;//Default value
+let city = ["Toronto", "Vancouver", "Montreal" , "Calgary"]
+let classificationName = ["Sports", "Music", "Arts"]
+
 
 // cache of DOM elements
-
-const $form = $('#userSelectionForm');
-const $userPostalCode = $('#postalCode');
-const $userSelectedGenre = $('#preferredGenre');
-const $submit = $('#submit');
+// const $form = $('#userSelectionForm');
+// const $userSelectedGenre = $('#preferredGenre');
+// const $submit = $('#submit');
 
 // init function
 
-findEvent.init = function() {
-    findEvent.userInput();
-    findEvent.resetInput(); 
-};
+// findEvent.init = function() {
+//     findEvent.userInput();
+//     findEvent.resetInput(); 
+// };
 
 // form submission listener
 
-findEvent.userInput = function() {
-    $form.on('submit', function(event) {
+// findEvent.userInput = function() {
+//     $form.on('submit', function(event) {
+//         event.preventDefault();
+
+//         $userPostalCode.empty();
+
+//         findEvent.getInput();
+//     });
+// };
+$('#userSelectionForm').on('submit', function(event) {
         event.preventDefault();
+        findEvent.eventCity = $('input[name="city"]:checked').val();
+        console.log(findEvent.eventCity, "hello");
+       
+        findEvent.classificationName = $('#preferredGenre').find(":selected").text();
+        console.log(findEvent.classificationName);
 
-        $userPostalCode.empty();
+        // $("#preferredGenre").on('change',function() {
+        //     console.log('I got called');
+        //     preferr = $("#dotShape").val();
+        //     console.log(dotShape);
+        //     obj["particles"].shape.type = dotShape;
+        //     particlesJS('particles-js',obj);
+        //   });
 
-        findEvent.getInput();
-    });
-};
+})
+
 
 
 // storing user inputs int o variables, checking the inputs are valid, then passing to ajax request function
 
-findEvent.getInput = function() {
-    const userPostalCode = $userPostalCode.val();
-    const userSelectedGenre = $userSelectedGenre.val();
-    const regex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
-    const postalCodeVerifer = regex.test(userPostalCode);
+
+///ajax call to the listener
+findEvent.baseUrl = `https://app.ticketmaster.com/discovery/v2/events.json`;
+findEvent.apiKey = `fWG7RNp1homyItX8mZznhhwWgxC3upVy`;
+
+findEvent.getEvent = function(city,genre){
+    $.ajax({
+        url : findEvent.baseUrl,
+        method : 'GET',
+        dataType : 'json',
+        data : {
+            apikey : findEvent.apiKey,
+            city : findEvent.eventCity,
+            source : findEvent.eventSource,
+            classificationName : findEvent.classificationName
+            
+        }
+    }).then(function(result){
+        findEvent.displayEvent(result);
+    })
+
+}
+findEvent.displayEvent = function(result){
     
-    if (!userPostalCode || !userSelectedGenre) {
-        alert('Please input your choices!');
-    } elseif (postalCodeVerifer === true); {
-        findEvent.ajaxRequest(userPostalCode, userSelectedGenre);
-    }
-};
+    console.log(result);
+}
 
-// ajax call to ticketmaster
-
-findEvent.ajaxRequest = function (userPostalCode, userSelectedGenre) {
-    const ajaxQueryUrl = 'https://app.ticketmaster.com/discovery/v2/';
-    const apiKey = 'DJATvC5x8MlDZInGGwjbtu7Ad1TIA7YX';
+///init function
+findEvent.init = function(){
+    console.log('you are doing great');
+    findEvent.getEvent();
 
 }
 
-
-//doc ready
-
-$(function(){
-    findEvent.init = function() {
-
-    };
-});
+//document ready
+$(document).ready(function(){
+    findEvent.init();
+})////document ready ends here
