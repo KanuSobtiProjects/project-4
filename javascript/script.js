@@ -4,59 +4,75 @@ const findEvent = {};
 
 // cache of DOM elements
 
-const $form = $('#userSelectionForm');
-const $userPostalCode = $('#postalCode');
-const $userSelectedGenre = $('#preferredGenre');
-const $submit = $('#submit');
+// const $form = $('#userSelectionForm');
+// const $userPostalCode = $('#postalCode');
+// const $userSelectedGenre = $('#preferredGenre');
+// const $submit = $('#submit');
 
 // init function
 
-findEvent.init = function() {
-    findEvent.userInput();
-    findEvent.resetInput(); 
-};
+// findEvent.init = function() {
+//     findEvent.userInput();
+//     findEvent.resetInput(); 
+// };
 
 // form submission listener
 
-findEvent.userInput = function() {
-    $form.on('submit', function(event) {
-        event.preventDefault();
+// findEvent.userInput = function() {
+//     $form.on('submit', function(event) {
+//         event.preventDefault();
 
-        $userPostalCode.empty();
+//         $userPostalCode.empty();
 
-        findEvent.getInput();
-    });
-};
+//         findEvent.getInput();
+//     });
+// };
 
 
 // storing user inputs int o variables, checking the inputs are valid, then passing to ajax request function
 
-findEvent.getInput = function() {
-    const userPostalCode = $userPostalCode.val();
-    const userSelectedGenre = $userSelectedGenre.val();
-    const regex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
-    const postalCodeVerifer = regex.test(userPostalCode);
-    
-    if (!userPostalCode || !userSelectedGenre) {
-        alert('Please input your choices!');
-    } elseif (postalCodeVerifer === true); {
-        findEvent.ajaxRequest(userPostalCode, userSelectedGenre);
-    }
-};
 
 // ajax call to ticketmaster
 
-findEvent.ajaxRequest = function (userPostalCode, userSelectedGenre) {
-    const ajaxQueryUrl = 'https://app.ticketmaster.com/discovery/v2/';
-    const apiKey = 'DJATvC5x8MlDZInGGwjbtu7Ad1TIA7YX';
+// findEvent.ajaxRequest = function (userPostalCode, userSelectedGenre) {
+//     const ajaxQueryUrl = 'https://app.ticketmaster.com/discovery/v2/';
+//     const apiKey = 'fWG7RNp1homyItX8mZznhhwWgxC3upVy';
+
+// }
+
+
+findEvent.baseUrl = `https://app.ticketmaster.com/discovery/v2/classifications.json`;
+findEvent.apiKey = `fWG7RNp1homyItX8mZznhhwWgxC3upVy`;
+
+findEvent.getEvent = function(city){
+    $.ajax({
+        url : findEvent.baseUrl,
+        method : 'GET',
+        dataType : 'json',
+        data : {
+            apikey : findEvent.apiKey,
+            city : city,
+            source : 'Ticketmaster',
+            // city : 'Toronto'
+        }
+    }).then(function(result){
+        findEvent.displayEvent(result);
+    })
+
+}
+findEvent.displayEvent = function(result){
+    
+    console.log(result);
+}
+findEvent.init = function(){
+    console.log('you are doing great');
+    findEvent.getEvent();
 
 }
 
 
-//doc ready
 
-$(function(){
-    findEvent.init = function() {
 
-    };
-});
+$(document).ready(function(){
+    findEvent.init();
+})////document ready ends here
