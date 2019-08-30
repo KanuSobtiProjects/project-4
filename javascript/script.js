@@ -10,8 +10,8 @@
 
 const findEventApp = {};
 // let preferredGenre = Sports;//Default value
-let city = ["Toronto", "Vancouver", "Montreal" , "Calgary"]
-let classificationName = ["Sports", "Music", "Arts"]
+// let city = ["Toronto", "Vancouver", "Montreal" , "Calgary"]
+// let classificationName = ["Sports", "Music", "Arts"]
 
 
 // init function
@@ -79,11 +79,11 @@ findEventApp.displayEvent = function(result){
         myImage.alt = `${result._embedded.events[i].name} image`
         $('.wrapper').append(myImage);	
         console.log(result); 
-        $('.wrapper').append(`<p class="venues">
-        ${result._embedded.events[0]._embedded.venues[0].name} 
-        ${result._embedded.events[0]._embedded.venues[0].address.line1} 
-        ${result._embedded.events[0]._embedded.venues[0].city.name} 
-        ${result._embedded.events[0]._embedded.venues[0].postalCode}`);
+        $('.wrapper').append(
+        `<p class="venues">${result._embedded.events[0]._embedded.venues[0].name}</p>
+        <p>${result._embedded.events[0]._embedded.venues[0].address.line1}</p>
+        <p>${result._embedded.events[0]._embedded.venues[0].city.name}</p>
+        <p>${result._embedded.events[0]._embedded.venues[0].postalCode}</p>`);
         // $('.wrapper').append(`<p class="dates">${result._embedded.events[i].name}`);	
         // console.log(result);
 
