@@ -66,7 +66,8 @@ findEventApp.getEventApi = function(){
             apikey : findEventApp.apiKey,
             city : findEventApp.eventCity,
             source : findEventApp.eventSource,
-            classificationName : findEventApp.classificationName
+            classificationName : findEventApp.classificationName,
+            size : 4
             
         }
     }).then(function(result){
@@ -75,9 +76,25 @@ findEventApp.getEventApi = function(){
 
 }
 findEventApp.displayEvent = function(result){
-    
-    console.log(result);
-}
+    for(i = 0; i < result._embedded.events.length; i++){
+        $('.wrapper').append(`<h4 class="name">${result._embedded.events[i].name}`);	
+        console.log(result);
+        let imgId = `image${i}`;
+        console.log(imgId);
+        let myImage = new Image();
+        myImage.src = result._embedded.events[i].images[0].url;
+        myImage.alt = `${result._embedded.events[i].name} image`
+        $('.wrapper').append(myImage);	
+        console.log(result); 
+        $('.wrapper').append(`<p class="venues">
+        ${result._embedded.events[0]._embedded.venues[0].name} 
+        ${result._embedded.events[0]._embedded.venues[0].address.line1} 
+        ${result._embedded.events[0]._embedded.venues[0].city.name} 
+        ${result._embedded.events[0]._embedded.venues[0].postalCode}`);
+
+    }
+
+    }
 
 ///init function
 findEventApp.init = function(){
