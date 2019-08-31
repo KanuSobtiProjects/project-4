@@ -10,123 +10,175 @@
 // 6) 	MEDIA QUERIES
 // X)   PARTIALS
 
-
 // 1 GENERAL STYLES
 
-body {
-background-image: url(../assets/mountains.jpg);
-background-repeat: no-repeat;
-background-position: center;
-background-attachment: fixed; 
-background-size: cover;
+img {
+  max-width: 100%;
 }
 
-img {
-	max-width: 100%;
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  animation: animate 20s ease infinite;
+}
+
+.outer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.details {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    background-image: url(../assets/arts.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+  }
+  25% {
+    background-image: url(../assets/sports.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+  }
+  50% {
+    background-image: url(../assets/music.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+  }
+  75% {
+    background-image: url(../assets/sportsTwo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+  }
 }
 
 // 2. WRAPPER
 
 .wrapper {
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 // 3. TYPOGRAPHY
 
 body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 125%;
-	text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: 125%;
+  text-transform: uppercase;
 }
 
 fieldset {
-	color: white;
-	h1 {
-		padding-top: 20%;
-		letter-spacing: 0.2rem;
-		font-size: 1rem;
-	}
-	label {
-		text-align: center;
-		font-size: 0.8rem;
-	}
-	input[type="submit"] {
-			font-size: 2rem;
-	}
+  color: white;
+  h1 {
+    padding-top: 20%;
+    letter-spacing: 0.2rem;
+    font-size: 1rem;
+  }
+  label {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  input[type="submit"] {
+    font-size: 2rem;
+  }
 }
 
 footer h3 {
-	font-size: 0.8rem;
-	font-weight: 300;
-	letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
 }
 
 // 4) FORM STYLES
 
 form {
-	display: flex;
-	justify-content: center;
-	height: 90vh;
-	fieldset {
-		border: none;
-		width: auto;
-	}
-	h1 {
-		font-size: 1rem;
-	}
-	label {
-		letter-spacing: 0.2rem;
-		margin-bottom: 1rem;
-	}
-	input[type="text"] {
-		width: 90%;
-		margin-bottom: 1.5rem;
-		border-radius: 5px;
-		padding: 5px;
-	}
-	input[type="submit"] {
-		background: rgba(99, 111, 159, 0.5);
-		border: none;
-		margin-top: -50px;
-		padding: 2.5px 5px;
-		border-radius: 5px;
-		color: white;
-	}
-	input:hover[type="submit"],
-	input:active[type="submit"] {
-		color: darkblue;
-	}
-	option {
-		text-transform: capitalize;
-		width: 200px;
-	}
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  fieldset {
+    border: none;
+    width: auto;
+  }
+  h1 {
+    font-size: 1rem;
+  }
+  label {
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  input[type="text"] {
+    width: 90%;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  input[type="submit"] {
+    background: rgba(99, 111, 159, 0.5);
+    border: none;
+    margin-top: -50px;
+    padding: 2.5px 5px;
+    border-radius: 5px;
+    color: white;
+  }
+  input:hover[type="submit"],
+  input:active[type="submit"] {
+    color: darkblue;
+  }
+  option {
+    text-transform: capitalize;
+    width: 200px;
+  }
 }
 
 .formInputs {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
 }
 
 .generate {
-	margin: 0 auto;
-	width: 70px;
+  margin: 0 auto;
+  width: 70px;
 }
 
 // 5) FOOTER STYLES
 
 footer {
-	margin-left: 30px;
-	margin-top: 50px;
-	color: white;
-	a {
-		color: white;
-	}
+  margin-top: -5%;
+  margin-left: 30px;
+  color: white;
+  a {
+    color: white;
+  }
 }
 
 // 6) MEDIA QUERIES
@@ -137,14 +189,13 @@ footer {
 
 /* ------------- Landscape phone to portrait table ------------- */
 @media (min-width: 768px) {
-
-	fieldset {
-		h1 {
-			padding-top: 20%;
-			letter-spacing: 0.2rem;
-			font-size: 1rem;
-		}
-	}
+  fieldset {
+    h1 {
+      padding-top: 20%;
+      letter-spacing: 0.2rem;
+      font-size: 1rem;
+    }
+  }
 }
 
 /* --------------- Portrait tablet and small desktops --------------- */

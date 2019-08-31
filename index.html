@@ -9,50 +9,56 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header wrapper">
-    <form id="userSelectionForm">
-      <fieldset>
-        <h1>Find An Event Near You!!!!!</h1>
-        <div class="formInputs">
-          <label for="Toronto">Toronto</label>
-          <input type="radio" name="city" id="Toronto" value="Toronto" required>
-          <label for="Vancouver">Vancouver</label>
-          <input type="radio" name="city" id="Vancouver" value="Vancouver" required>
-          <label for="Montreal">Montreal</label>
-          <input type="radio" name="city" id="Montreal" value="Montreal" required>
-          <label for="Calgary">Calgary</label>
-          <input type="radio" name="city" id="Calgary" value="Calgary" required>
-          <label for="preferredGenre">Choose your Genre</label>
-          <select id="preferredGenre" required>
-          <!-- <option value="Default" selected>Default</option> -->
-          <option value="Sports">Sports</option>
-          <option value="Music">Music</option>
-          <option value="Arts & Theatre">Arts & Theatre</option>
-          <option value="Random">Random</option>
-          </select>
-        </div> 
-        <div class="generate">
-            <label for=""></label>
-          <input id="submit" type="submit" name="generate" value="GO!">
-        </div>
-      </fieldset>
-    </form> 
-    <div class = "gallery">
-      <img class = "gallery gallery1">
-      <img class = "gallery gallery2">
-      <img class = "gallery gallery3">
-      <img class = "gallery gallery4">
-      <img class = "gallery gallery5">
+  <div class="container">
+    <div class="outer">
+      <div class="details">
+        <header class="header">
+          <form id="userSelectionForm">
+            <fieldset>
+              <h1>Find An Event Near You!!!!!</h1>
+              <div class="formInputs">
+                <label for="Toronto">Toronto</label>
+                <input type="radio" name="city" id="Toronto" value="Toronto" required>
+                <label for="Vancouver">Vancouver</label>
+                <input type="radio" name="city" id="Vancouver" value="Vancouver" required>
+                <label for="Montreal">Montreal</label>
+                <input type="radio" name="city" id="Montreal" value="Montreal" required>
+                <label for="Calgary">Calgary</label>
+                <input type="radio" name="city" id="Calgary" value="Calgary" required>
+                <label for="preferredGenre">Choose your Genre</label>
+                <select id="preferredGenre" required>
+                <!-- <option value="Default" selected>Default</option> -->
+                <option value="Sports">Sports</option>
+                <option value="Music">Music</option>
+                <option value="Arts & Theatre">Arts & Theatre</option>
+                <option value="Random">Random</option>
+                </select>
+              </div> 
+              <div class="generate">
+                  <label for=""></label>
+                <input id="submit" type="submit" name="generate" value="GO!">
+              </div>
+            </fieldset>
+          </form> 
+          <div class = "gallery">
+            <img class = "gallery gallery1">
+            <img class = "gallery gallery2">
+            <img class = "gallery gallery3">
+            <img class = "gallery gallery4">
+            <img class = "gallery gallery5">
+          </div>
+          </div>
+        </header>
+        <main>
+          <section class="wrapper">
+          </section>
+        </main>
+        <footer>
+          <h3>Design by <a href="https://www.prashath.dev">Prashath Cheliyan</a> & <a href="http://www.kanusobti.com ">Kanu Sobti</a> || Ticketmaster API</h3>
+        </footer>
+      </div>
     </div>
-    </div>
-  </header>
-  <main>
-    <section class="wrapper">
-    </section>
-  </main>
-  <footer>
-    <h3>Design by <a href="https://www.prashath.dev">Prashath Cheliyan</a> & <a href="http://www.kanusobti.com ">Kanu Sobti</a> || Ticketmaster API</h3>
-  </footer>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
   <script src="javascript/script.js"></script>
 </body>
