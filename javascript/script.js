@@ -65,7 +65,9 @@ findEventApp.getEventApi = function(){
         }
     }).then(function(result){
         findEventApp.displayEvent(result);
-    })
+    }).fail(
+        console.log('sorry')
+    );
 
 }
 findEventApp.displayEvent = function(result){
