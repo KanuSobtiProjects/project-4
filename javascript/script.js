@@ -34,6 +34,7 @@ findEventApp.getEvent = function() {
             $('.header').hide();
             $('.main').show();
             
+            
     })
 }
 
@@ -65,7 +66,9 @@ findEventApp.getEventApi = function(){
         }
     }).then(function(result){
         findEventApp.displayEvent(result);
-    })
+    }).fail(
+        console.log('sorry')
+    );
 
 }
 findEventApp.displayEvent = function(result){
