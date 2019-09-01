@@ -102,4 +102,5 @@ findEventApp.init = function(){
 //document ready
 $(document).ready(function(){
     findEventApp.init();
+
 })////document ready ends here
