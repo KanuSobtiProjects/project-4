@@ -1,19 +1,17 @@
-/* ========================
-   	   table of contents 
-   ======================== */
+@import "setup";
+@import "base";
 
-// 1) 	GENERAL STYLES
-// 2) 	WRAPPER
-// 3) 	TYPOGRAPHY
-// 4) 	FORM STYLES
-// 5)	FOOTER STYLES
-// 6) 	MEDIA QUERIES
-// X)   PARTIALS
-
-// 1 GENERAL STYLES
-
-img {
-  max-width: 100%;
+.skipLink {
+  position: absolute;
+  left: -1000px;
+  top: 5px;
+  z-index: 999;
+  background: #c1aeae;
+  color: blue;
+  font-size: 20px;
+  &:focus {
+  left: 10px;
+}
 }
 
 .container {
@@ -31,7 +29,7 @@ img {
   top: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.3);
+  
 }
 
 .details {
@@ -77,67 +75,50 @@ img {
   }
 }
 
-// 2. WRAPPER
-
-.wrapper {
-  width: 80%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-// 3. TYPOGRAPHY
-
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 125%;
-  text-transform: uppercase;
-}
-
-fieldset {
-  color: white;
-  h1 {
-    padding-top: 20%;
-    letter-spacing: 0.2rem;
-    font-size: 1rem;
-  }
-  label {
-    text-align: center;
-    font-size: 0.8rem;
-  }
-  input[type="submit"] {
-    font-size: 2rem;
+fieldset{
+  background: rgba(255, 255, 255, 0.3);
+  padding:6%;
+  .formInputs{
+    display: flex;
+    width:50%;
+    label{
+      padding: 3% 4%;
+    }
+    
   }
 }
 
-footer h3 {
-  font-size: 0.8rem;
-  font-weight: 300;
-  letter-spacing: 0.2rem;
+input[type="submit"] {
+      font-size: 2rem;
 }
 
-// 4) FORM STYLES
+main{
+   background: gray;
+   height: 100vh;
+   .wrapper{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    .eventsContainer{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      margin: 11%;
+    }
+   }
+}
 
-form {
+.eventsDescription{
   display: flex;
-  justify-content: center;
-  height: 90vh;
-  fieldset {
-    border: none;
-    width: auto;
+  .eventsImage{
+    width:50%;
+    height:200px;  
   }
-  h1 {
-    font-size: 1rem;
+  p{
+    width: 50%;
   }
-  label {
-    letter-spacing: 0.2rem;
-    margin-bottom: 1rem;
-  }
-  input[type="text"] {
-    width: 90%;
-    margin-bottom: 1.5rem;
-    border-radius: 5px;
-    padding: 5px;
-  }
+}
+
   input[type="submit"] {
     background: rgba(99, 111, 159, 0.5);
     border: none;
@@ -145,67 +126,11 @@ form {
     padding: 2.5px 5px;
     border-radius: 5px;
     color: white;
+    // font-size: 2rem;
   }
-  input:hover[type="submit"],
-  input:active[type="submit"] {
-    color: darkblue;
+  select{
+    font-size:2rem;
+    padding:10px;
   }
-  option {
-    text-transform: capitalize;
-    width: 200px;
-  }
-}
 
-.formInputs {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 60%;
-}
-
-.generate {
-  margin: 0 auto;
-  width: 70px;
-}
-
-// 5) FOOTER STYLES
-
-footer {
-  margin-top: -5%;
-  margin-left: 30px;
-  color: white;
-  a {
-    color: white;
-  }
-}
-
-// 6) MEDIA QUERIES
-
-/* ---------------- Landscape phones and up ---------------- */
-@media (min-width: 480px) {
-}
-
-/* ------------- Landscape phone to portrait table ------------- */
-@media (min-width: 768px) {
-  fieldset {
-    h1 {
-      padding-top: 20%;
-      letter-spacing: 0.2rem;
-      font-size: 1rem;
-    }
-  }
-}
-
-/* --------------- Portrait tablet and small desktops --------------- */
-@media (min-width: 940px) {
-}
-
-// X)   PARTIALS
-@import "_setup";
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 953f9ad3ddbd954bc8785d9a243184642620c7e4
+@import "queries";

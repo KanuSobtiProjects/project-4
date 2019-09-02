@@ -10,9 +10,6 @@
 
 const findEventApp = {};
 // let preferredGenre = Sports;//Default value
-// let city = ["Toronto", "Vancouver", "Montreal" , "Calgary"]
-// let classificationName = ["Sports", "Music", "Arts"]
-
 
 // init function
 
@@ -33,7 +30,7 @@ findEventApp.getEvent = function() {
             findEventApp.getEventApi();
             $('.header').hide();
             $('.main').show();
-            
+                        
             
     })
 }
@@ -72,21 +69,28 @@ findEventApp.getEventApi = function(){
 
 }
 findEventApp.displayEvent = function(result){
+    // $('.reset').show();
     for(i = 0; i < result._embedded.events.length; i++){
-        $('.wrapper').append(`<h4 class="name">${result._embedded.events[i].name}`);	
+        // $('.wrapper').append(`<h4 class="name">${result._embedded.events[i].name}`);	
         console.log(result);
         let imgId = `image${i}`;
         console.log(imgId);
         let myImage = new Image();
         myImage.src = result._embedded.events[i].images[0].url;
         myImage.alt = `${result._embedded.events[i].name} image`
-        $('.wrapper').append(myImage);	
+        myImage.className = `eventsImage`;
+        // $('.wrapper').append(myImage);	
         console.log(result); 
         $('.wrapper').append(
-        `<p class="venues">${result._embedded.events[0]._embedded.venues[0].name}</p>
-        <p>${result._embedded.events[0]._embedded.venues[0].address.line1}</p>
-        <p>${result._embedded.events[0]._embedded.venues[0].city.name}</p>
-        <p>${result._embedded.events[0]._embedded.venues[0].postalCode}</p>`);
+        `<div id="eventsContainer${i}">
+        <h4 class="name">${result._embedded.events[i].name}</h4>
+        <div id ="eventsDescription${i}"><p>${result._embedded.events[0]._embedded.venues[0].name}</br>${result._embedded.events[0]._embedded.venues[0].address.line1}</br>${result._embedded.events[0]._embedded.venues[0].city.name}</br>${result._embedded.events[0]._embedded.venues[0].postalCode}</p></div>
+        </div>`);
+        console.log('my Div below');
+        console.log(document.getElementById(`eventsContainer${i}`));
+        document.getElementById(`eventsDescription${i}`).appendChild(myImage);
+        document.getElementById(`eventsContainer${i}`).className=`eventsContainer`;
+        document.getElementById(`eventsDescription${i}`).className=`eventsDescription`;
         // $('.wrapper').append(`<p class="dates">${result._embedded.events[i].name}`);	
         // console.log(result);
 
