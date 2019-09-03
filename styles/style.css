@@ -654,4 +654,10 @@ select {
   h1 {
     font-size: 3rem;
   }
+  .button {
+    font-size: 1.5rem;
+  }
+  .resetButtonDiv .resetButton {
+    margin-left: 26%;
+  }
 }
