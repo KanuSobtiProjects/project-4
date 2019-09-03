@@ -18,14 +18,14 @@
             <fieldset>
               <h1>Find An Event Near You!!!!!</h1>
               <div class="formInputs">
-                <label for="Toronto">Toronto</label>
                 <input type="radio" name="city" id="Toronto" value="Toronto" required>
-                <label for="Vancouver">Vancouver</label>
+                <label for="Toronto">Toronto</label>
                 <input type="radio" name="city" id="Vancouver" value="Vancouver" required>
-                <label for="Montreal">Montreal</label>
+                <label for="Vancouver">Vancouver</label>
                 <input type="radio" name="city" id="Montreal" value="Montreal" required>
-                <label for="Calgary">Calgary</label>
+                <label for="Montreal">Montreal</label>
                 <input type="radio" name="city" id="Calgary" value="Calgary" required>
+                <label for="Calgary">Calgary</label>
               </div>
               <div class="genre">
                 <label for="preferredGenre">Choose your Genre</label>
@@ -50,7 +50,8 @@
   <main id="resultPage">
     <section class="wrapper">
     </section>
-    <a class="resetButton button" href="#welcomePage">Let's play again</a>   
+    <!-- <a class="resetButton button" href="#welcomePage">Let's play again</a>  -->
+    <div class="eventsDescription" id="resetButtonDiv"><a class="resetButton button" id="resetButton">Search again!</a></div>
   </main>
   <!-- <footer>
     <h3>Design by <a href="https://www.prashath.dev">Prashath Cheliyan</a> & <a href="http://www.kanusobti.com ">Kanu Sobti</a> || Ticketmaster API</h3>

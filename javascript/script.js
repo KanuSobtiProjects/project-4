@@ -9,14 +9,7 @@
 
 
 const findEventApp = {};
-// let preferredGenre = Sports;//Default value
-
-// init function
-
-// findEventApp.init = function() {
-//     findEventApp.userInput();
-//     findEventApp.resetInput(); 
-// };
+const genre = [`Sports`,`Music`,`Arts & Theatre`];//Array to select Random Event
 
 
 findEventApp.getEvent = function() {
@@ -26,20 +19,29 @@ findEventApp.getEvent = function() {
             findEventApp.eventCity = $('input[name="city"]:checked').val();
             console.log(findEventApp.eventCity);           
             findEventApp.classificationName = $('#preferredGenre').find(":selected").text();
+            if(findEventApp.classificationName === `Random` || 
+            findEventApp.classificationName === `Select`)
+            {
+                let randomGenre = Math.floor(Math.random() * genre.length);
+                findEventApp.classificationName = genre[randomGenre];
+            }
             console.log(findEventApp.classificationName);
             findEventApp.getEventApi();
             $('.header').hide();
             $('.main').show();
-                        
-            
-    })
+    });
+
+    $('#resetButtonDiv').on('click','a', function(event) {
+        console.log('I am Reset');
+        $('.header').show();
+        $('.main').hide();
+        $('.wrapper').empty();
+        $('input[name="city"]').prop('checked', false);
+        $("#preferredGenre").val($("#preferredGenre option:first").val());
+    });
+  
+
 }
-
-
-//Name
-//Image
-//Venue
-//dates
 
 // storing user inputs int o variables, checking the inputs are valid, then passing to ajax request function
 
@@ -93,9 +95,9 @@ findEventApp.displayEvent = function(result){
         document.getElementById(`eventsDescription${i}`).className=`eventsDescription`;
         // $('.wrapper').append(`<p class="dates">${result._embedded.events[i].name}`);	
         // console.log(result);
-
-
     }
+    // $('.wrapper').append(
+    //     `<div class="eventsDescription" id="resetButtonDiv"><a class="resetButton button" id="resetButton">Search again!</a></div>`);
 
     }
 
@@ -103,11 +105,9 @@ findEventApp.displayEvent = function(result){
 findEventApp.init = function(){
     console.log('you are doing great');
     findEventApp.getEvent();
-
 }
 
 //document ready
 $(document).ready(function(){
     findEventApp.init();
-
 })////document ready ends here

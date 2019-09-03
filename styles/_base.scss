@@ -1,5 +1,4 @@
 $headingColor :#252522;
-$gridColor: #333330;
 $baseColor: black;
 $mainHeadingFont:'Playfair Display', serif;
 $subHeadingFont : 'Francois One', sans-serif;
@@ -78,6 +77,28 @@ h4{
     font-family:$baseFont;
     color:$baseColor;    
     margin-bottom: 3%;
+}
+.button {
+    font-family: $baseFont;
+    text-decoration: none;
+    background-color:#242221;
+    color: cyan;
+    padding: 10px 20px;
+    border:none;
+    font-size: 2rem;
+    box-shadow: 6px 5px 6px gray;
+    &:hover{
+        color:white;
+        box-shadow: 8px 7px 8px gray;
+        cursor: pointer;
+    }
+    &:focus{
+        font-family: white;
+    }
+    &:active{
+        box-shadow: none;
+    }
+
 }
 
 

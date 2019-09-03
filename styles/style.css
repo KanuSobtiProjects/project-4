@@ -293,6 +293,34 @@ h4 {
   margin-bottom: 3%;
 }
 
+.button {
+  font-family: "Anonymous Pro", monospace;
+  text-decoration: none;
+  background-color: #242221;
+  color: cyan;
+  padding: 10px 20px;
+  border: none;
+  font-size: 2rem;
+  -webkit-box-shadow: 6px 5px 6px gray;
+          box-shadow: 6px 5px 6px gray;
+}
+
+.button:hover {
+  color: white;
+  -webkit-box-shadow: 8px 7px 8px gray;
+          box-shadow: 8px 7px 8px gray;
+  cursor: pointer;
+}
+
+.button:focus {
+  font-family: white;
+}
+
+.button:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .skipLink {
   position: absolute;
   left: -1000px;
@@ -448,7 +476,7 @@ main .wrapper .eventsContainer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 11%;
+  margin: 7%;
 }
 
 .eventsDescription {
@@ -478,6 +506,16 @@ input[type="submit"] {
 select {
   font-size: 2rem;
   padding: 10px;
+}
+
+#resetButtonDiv {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#resetButtonDiv .resetButton {
+  margin-left: 47%;
 }
 
 /* ---------------- Landscape phones and up ---------------- */
