@@ -285,7 +285,7 @@ h4 {
   line-height: 20px;
   letter-spacing: 1px;
   font-family: "Anonymous Pro", monospace;
-  color: black;
+  color: white;
   margin-bottom: 3%;
 }
 
@@ -443,6 +443,9 @@ fieldset .formInputs {
   display: -ms-flexbox;
   display: flex;
   width: 50%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 fieldset .formInputs label {
@@ -451,8 +454,6 @@ fieldset .formInputs label {
 
 main {
   background: linear-gradient(-45deg, #1d4350, #a43931);
-  -webkit-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
   height: 100vh;
 }
 
@@ -503,12 +504,154 @@ select {
   margin-top: 3%;
 }
 
-#resetButtonDiv {
+.resetButtonDiv {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 3;
 }
 
-#resetButtonDiv .resetButton {
+.resetButtonDiv .resetButton {
   margin-left: 47%;
+}
+
+@media (max-width: 1280px) {
+  h1 {
+    font-size: 8rem;
+  }
+  label {
+    font-size: 1.9rem;
+    line-height: 40px;
+    letter-spacing: 1px;
+  }
+  h3 {
+    font-size: 1.9rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 7rem;
+  }
+  label {
+    font-size: 1.9rem;
+    line-height: 40px;
+    letter-spacing: 1px;
+  }
+  h3 {
+    font-size: 1.9rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 940px) {
+  h1 {
+    font-size: 7rem;
+  }
+  label {
+    font-size: 1.9rem;
+    line-height: 40px;
+    letter-spacing: 1px;
+  }
+  h3 {
+    font-size: 1.9rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  select {
+    font-size: 1.6rem;
+  }
+  .eventsDescription .eventsImage {
+    height: 185px;
+  }
+}
+
+@media (max-width: 812px) {
+  h1 {
+    font-size: 5.3rem;
+    color: white;
+  }
+  label {
+    font-size: 1.6rem;
+    line-height: 40px;
+    color: white;
+  }
+  fieldset {
+    background: transparent;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  h4 {
+    font-size: 1.8rem;
+  }
+  select {
+    font-size: 1.5rem;
+  }
+  .eventsDescription .eventsImage {
+    height: 185px;
+  }
+  p {
+    line-height: 23px;
+    font-size: 1.6rem;
+  }
+  .resetButtonDiv .resetButton {
+    margin-left: 38%;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 5.1rem;
+  }
+  .designReferenceDiv {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 4.6rem;
+  }
+  fieldset .formInputs {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  select {
+    padding: 5px;
+  }
+  input[type="submit"] {
+    padding: 10px;
+    font-size: 1.8rem;
+  }
+  main {
+    height: 100%;
+  }
+  main .wrapper {
+    display: block;
+  }
+  .eventsDescription .eventsImage {
+    height: 150px;
+  }
+  .resetButtonDiv .resetButton {
+    margin-left: 30%;
+  }
+  .designReferenceDiv {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  h1 {
+    font-size: 3rem;
+  }
 }

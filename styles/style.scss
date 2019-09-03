@@ -81,6 +81,7 @@ fieldset{
   .formInputs{
     display: flex;
     width:50%;
+    justify-content: space-between;
     label{
       padding: 3% 4%;
     }    
@@ -89,9 +90,6 @@ fieldset{
 
 main{
   background: linear-gradient(-45deg, #1d4350, #a43931);
-	-webkit-animation:  AnimationName 30s ease infinite;
-	-moz-animation:     AnimationName 30s ease infinite;
-  animation:          AnimationName 30s ease infinite;
   height: 100vh;
   .wrapper{
   display: grid;
@@ -129,7 +127,7 @@ select{
   margin-top: 3%;
 }
 
-#resetButtonDiv{
+.resetButtonDiv{
   grid-column-start: 1;
   grid-column-end: 3;
   .resetButton{
