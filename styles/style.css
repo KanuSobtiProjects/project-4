@@ -239,10 +239,6 @@ img {
   width: 100%;
 }
 
-span {
-  display: block;
-}
-
 p {
   font-size: 1.8rem;
   line-height: 28px;
@@ -264,7 +260,7 @@ h1 {
   margin: 0;
   color: #252522;
   font-family: "Playfair Display", serif;
-  text-shadow: -9px 1px 2px #b4a6a6;
+  text-shadow: -9px 1px 2px #5c5656;
 }
 
 label {
@@ -293,7 +289,8 @@ h4 {
   margin-bottom: 3%;
 }
 
-.button {
+.button,
+input[type="submit"] {
   font-family: "Anonymous Pro", monospace;
   text-decoration: none;
   background-color: #242221;
@@ -305,18 +302,21 @@ h4 {
           box-shadow: 6px 5px 6px gray;
 }
 
-.button:hover {
+.button:hover,
+input[type="submit"]:hover {
   color: white;
   -webkit-box-shadow: 8px 7px 8px gray;
           box-shadow: 8px 7px 8px gray;
   cursor: pointer;
 }
 
-.button:focus {
+.button:focus,
+input[type="submit"]:focus {
   font-family: white;
 }
 
-.button:active {
+.button:active,
+input[type="submit"]:active {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -434,7 +434,7 @@ h4 {
 }
 
 fieldset {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
   padding: 6%;
 }
 
@@ -449,12 +449,10 @@ fieldset .formInputs label {
   padding: 3% 4%;
 }
 
-input[type="submit"] {
-  font-size: 2rem;
-}
-
 main {
-  background: gray;
+  background: linear-gradient(-45deg, #1d4350, #a43931);
+  -webkit-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
   height: 100vh;
 }
 
@@ -494,18 +492,15 @@ main .wrapper .eventsContainer {
   width: 50%;
 }
 
-input[type="submit"] {
-  background: rgba(99, 111, 159, 0.5);
-  border: none;
-  margin-top: -50px;
-  padding: 2.5px 5px;
-  border-radius: 5px;
-  color: white;
-}
-
 select {
   font-size: 2rem;
   padding: 10px;
+  background: #252522;
+  color: cyan;
+}
+
+.designReferenceDiv {
+  margin-top: 3%;
 }
 
 #resetButtonDiv {
@@ -517,7 +512,3 @@ select {
 #resetButtonDiv .resetButton {
   margin-left: 47%;
 }
-
-/* ---------------- Landscape phones and up ---------------- */
-/* ------------- Landscape phone to portrait table ------------- */
-/* --------------- Portrait tablet and small desktops --------------- */

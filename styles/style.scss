@@ -76,37 +76,35 @@
 }
 
 fieldset{
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
   padding:6%;
   .formInputs{
     display: flex;
     width:50%;
     label{
       padding: 3% 4%;
-    }
-    
+    }    
   }
 }
 
-input[type="submit"] {
-      font-size: 2rem;
-}
-
 main{
-   background: gray;
-   height: 100vh;
-   .wrapper{
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(2, 1fr);
+  background: linear-gradient(-45deg, #1d4350, #a43931);
+	-webkit-animation:  AnimationName 30s ease infinite;
+	-moz-animation:     AnimationName 30s ease infinite;
+  animation:          AnimationName 30s ease infinite;
+  height: 100vh;
+  .wrapper{
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
     
-    .eventsContainer{
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      margin: 7%;
+  .eventsContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 7%;
     }
-   }
+  }
 }
 
 .eventsDescription{
@@ -120,22 +118,17 @@ main{
   }
 }
 
-  input[type="submit"] {
-    background: rgba(99, 111, 159, 0.5);
-    border: none;
-    margin-top: -50px;
-    padding: 2.5px 5px;
-    border-radius: 5px;
-    color: white;
-    // font-size: 2rem;
-  }
-  select{
-    font-size:2rem;
-    padding:10px;
-  }
-  // .resetButton{
-  //  margin-left:30%;
-  // }
+select{
+  font-size:2rem;
+  padding:10px;
+  background: $headingColor;
+  color: cyan;
+}
+
+.designReferenceDiv{
+  margin-top: 3%;
+}
+
 #resetButtonDiv{
   grid-column-start: 1;
   grid-column-end: 3;

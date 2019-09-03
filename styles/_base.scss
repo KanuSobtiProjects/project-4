@@ -23,10 +23,6 @@ img{
     width:100%;
 }
 
-span{
-    display: block;
-}
-
 p{
     font-size:1.8rem;
     line-height: 28px;
@@ -34,7 +30,6 @@ p{
     font-family:$baseFont;
     color:$baseColor;    
 }
-
 
 .wrapper{
     max-width: 1280px;
@@ -49,7 +44,7 @@ h1{
     margin:0;
     color: $headingColor;
     font-family: $mainHeadingFont;
-    text-shadow: -9px 1px 2px #b4a6a6;
+    text-shadow: -9px 1px 2px #5c5656;
 }
 
 label{
@@ -58,8 +53,7 @@ label{
     line-height: 58px;
     letter-spacing: 2.6px;
     font-family:$subHeadingFont;
-    color:$headingColor;
-       
+    color:$headingColor;    
 }
 
 h3{
@@ -78,7 +72,8 @@ h4{
     color:$baseColor;    
     margin-bottom: 3%;
 }
-.button {
+.button,
+input[type="submit"] {
     font-family: $baseFont;
     text-decoration: none;
     background-color:#242221;
@@ -98,7 +93,6 @@ h4{
     &:active{
         box-shadow: none;
     }
-
 }
 
 
